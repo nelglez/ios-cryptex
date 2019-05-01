@@ -94,8 +94,60 @@ class CryptexViewController: UIViewController {
     }
     
     private func presentNoTimeRemainingAlert() {
+        let alertTitle = "You've ran out of time!"
+        let alertMessage = "Would you like to reset the timer and keep guessing, or try a new cryptex?"
         
+        
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        
+        
+        let resetAction = UIAlertAction(title: "Reset and try again", style: .default) { (_) in
+            self.reset()
+        }
+        
+        let newCryptexAction = UIAlertAction(title: "New cryptex", style: .default) { (_) in
+            self.newCryptexAndReset()
+        }
+        
+        alert.addAction(resetAction)
+        alert.addAction(newCryptexAction)
+        
+        present(alert, animated: true, completion: nil)
     }
+    
+    private func presentCorrectPasswordAlert() {
+        
+        if hasMatchingPassword() {
+        let alert = UIAlertController(title: "Correct!", message: "You have correctly guessed the password!", preferredStyle: .alert)
+        
+            alert.addAction(UIAlertAction(title: "Keep Going!", style: .default) { (_) in
+            self.newCryptexAndReset()
+        })
+        
+        self.present(alert, animated: true, completion: nil)
+        } else {
+            presentIncorrectPasswordAlert()
+        }
+        
+        let alert = UIAlertController(title: "Try again", message: nil, preferredStyle: .alert)
+        
+        let newCryptexAction = UIAlertAction(title: "New cryptex", style: .default) { (_) in
+            self.newCryptexAndReset()
+        }
+        
+        alert.addAction(newCryptexAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func presentIncorrectPasswordAlert() {
+        let alert = UIAlertController(title: "Nope, Sorry!", message: "That is not the right passsword!", preferredStyle: .alert)
+        
+       alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     private func newCryptexAndReset() {
         cryptexController.randomCryptex()
@@ -105,7 +157,8 @@ class CryptexViewController: UIViewController {
     
     @IBAction func unlockButtonPressed(_ sender: UIButton) {
         
-        
+       presentCorrectPasswordAlert()
+    
     }
     
 }
