@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ost-9L-zfZ">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -48,6 +48,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="w2t-MT-uFE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pjZ-oG-EhA">
+                            <connections>
+                                <segue destination="yr2-d1-nJY" kind="show" identifier="ToAddVC" id="JoM-6M-e7j"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="hintLabel" destination="156-Ga-Cyk" id="61D-Or-RtG"/>
                         <outlet property="pickerView" destination="4gu-JU-SVw" id="FlR-eE-JYE"/>
@@ -55,6 +62,83 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="871" y="679"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="RCw-ht-6np">
+            <objects>
+                <viewController id="yr2-d1-nJY" customClass="AddNewPasswordViewController" customModule="Cryptex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sHE-tW-lCT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1n4-t2-Vw5">
+                                <rect key="frame" x="20" y="136" width="374" height="106"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Word" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQf-Xc-HMN">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hint" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8UN-FB-efw">
+                                        <rect key="frame" x="0.0" y="38" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcq-E4-LiO">
+                                        <rect key="frame" x="0.0" y="76" width="374" height="30"/>
+                                        <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="addButtonPressed:" destination="yr2-d1-nJY" eventType="touchUpInside" id="y6g-F9-0fC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1n4-t2-Vw5" firstAttribute="top" secondItem="TOE-Pp-0y9" secondAttribute="top" constant="48" id="3id-Z0-m4x"/>
+                            <constraint firstItem="1n4-t2-Vw5" firstAttribute="leading" secondItem="TOE-Pp-0y9" secondAttribute="leading" constant="20" id="DQU-8E-SPS"/>
+                            <constraint firstItem="TOE-Pp-0y9" firstAttribute="trailing" secondItem="1n4-t2-Vw5" secondAttribute="trailing" constant="20" id="s4F-ee-BvK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TOE-Pp-0y9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="sxd-uy-U4f">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ATP-lh-skP">
+                            <connections>
+                                <segue destination="18k-C4-fiH" kind="unwind" unwindAction="unwindToVCWithSegue:" id="okN-63-Rlz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="hintTextField" destination="8UN-FB-efw" id="rtf-Fe-ESl"/>
+                        <outlet property="passwordTextField" destination="EQf-Xc-HMN" id="EhD-YL-pF6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mef-Ae-LQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="18k-C4-fiH" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1553.6231884057972" y="680.35714285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nj1-Au-iHK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ost-9L-zfZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NPN-ki-Spm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="XRK-38-ZSA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aek-Rd-m6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="193" y="678"/>
         </scene>
     </scenes>
 </document>

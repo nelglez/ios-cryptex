@@ -14,6 +14,7 @@
 		7ACB5A52227A255800C78D46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ACB5A50227A255800C78D46 /* LaunchScreen.storyboard */; };
 		7ACB5A5A227A26E400C78D46 /* Cryptex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB5A59227A26E400C78D46 /* Cryptex.swift */; };
 		7ACB5A5D227A272700C78D46 /* CryptexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB5A5C227A272700C78D46 /* CryptexController.swift */; };
+		7ACB5A61227A339700C78D46 /* AddNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB5A60227A339700C78D46 /* AddNewPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7ACB5A53227A255800C78D46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ACB5A59227A26E400C78D46 /* Cryptex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryptex.swift; sourceTree = "<group>"; };
 		7ACB5A5C227A272700C78D46 /* CryptexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptexController.swift; sourceTree = "<group>"; };
+		7ACB5A60227A339700C78D46 /* AddNewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				7ACB5A47227A255600C78D46 /* AppDelegate.swift */,
-				7ACB5A5F227A273700C78D46 /* View Controller */,
 				7ACB5A5B227A271600C78D46 /* Model */,
 				7ACB5A5E227A272F00C78D46 /* Model Controller */,
+				7ACB5A5F227A273700C78D46 /* View Controller */,
 				7ACB5A4B227A255600C78D46 /* Main.storyboard */,
 				7ACB5A4E227A255800C78D46 /* Assets.xcassets */,
 				7ACB5A50227A255800C78D46 /* LaunchScreen.storyboard */,
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				7ACB5A49227A255600C78D46 /* CryptexViewController.swift */,
+				7ACB5A60227A339700C78D46 /* AddNewPasswordViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				7ACB5A4A227A255600C78D46 /* CryptexViewController.swift in Sources */,
 				7ACB5A5D227A272700C78D46 /* CryptexController.swift in Sources */,
 				7ACB5A5A227A26E400C78D46 /* Cryptex.swift in Sources */,
+				7ACB5A61227A339700C78D46 /* AddNewPasswordViewController.swift in Sources */,
 				7ACB5A48227A255600C78D46 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,8 +14,8 @@ class CryptexController {
         randomCryptex()
     }
     
-    var cryptex = [Cryptex(password: "Foo", hint: "A common placeholder word in programming"),
-                   Cryptex(password: "Cryptex", hint: "The thing you are trying to solve right now")]
+   private(set) var cryptex = [Cryptex(password: "Blue", hint: "The color of the sky"),
+                   Cryptex(password: "Green", hint: "The color of the grass")]
     
     
     var currentCryptex: Cryptex?
@@ -24,6 +24,14 @@ class CryptexController {
         guard let randomCryptex = cryptex.randomElement() else { return }
         
         currentCryptex = randomCryptex
+    }
+    
+    func addNewCryptex(word: String, hint: String) {
+        
+        let newCryptex = Cryptex(password: word, hint: hint)
+        
+        cryptex.append(newCryptex)
+        
     }
    
     

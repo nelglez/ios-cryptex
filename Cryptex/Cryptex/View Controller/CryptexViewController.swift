@@ -161,6 +161,16 @@ class CryptexViewController: UIViewController {
     
     }
     
+    @IBAction func unwindToVC(segue: UIStoryboardSegue) {}
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToAddVC" {
+            if let destinationVC = segue.destination as? AddNewPasswordViewController {
+                destinationVC.cryptexController = cryptexController
+            }
+        }
+    }
+    
 }
 
 extension CryptexViewController: UIPickerViewDataSource, UIPickerViewDelegate {
