@@ -8,13 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class CryptexViewController: UIViewController {
+    @IBOutlet weak var hintLabel: UILabel!
+    
+    @IBOutlet weak var pickerView: UIPickerView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func unlockButtonPressed(_ sender: UIButton) {
+    }
+    
 }
 
